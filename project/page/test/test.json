@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "#fff",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "测试小程序的功能",
+  "backgroundColor": "#10eb1a",
+  "enablePullDownRefresh":true,
+  "networkTimeout":1000,
+  "tabBar": {
+    "backgroundColor":"#f58e8e"
+  }
+}

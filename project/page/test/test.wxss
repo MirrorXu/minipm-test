@@ -1,0 +1,14 @@
+.test{
+  padding: 10rpx 20rpx;
+  background:rgb(230, 240, 250);
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.msgBox{
+  color: red;
+  display: inline-block;
+  font-weight: bold;
+  padding-left: 30px;
+}

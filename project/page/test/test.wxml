@@ -1,0 +1,5 @@
+<view class='test'>
+<view> msg :  <view  class="msgBox">{{msg}}</view></view>
+<button bindtap="changeName"> reverse msg </button>
+
+</view>
