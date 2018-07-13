@@ -1,0 +1,3 @@
+<template name="item">
+  <text style='color:red;display:block;border:1px solid yellow'>我是一个组件  {{text}}</text>
+</template> 

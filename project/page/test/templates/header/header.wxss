@@ -1,0 +1,5 @@
+.header{
+  font-size: 50rpx;
+  background: red;
+  text-align: center;
+}

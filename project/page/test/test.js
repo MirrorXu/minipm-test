@@ -8,7 +8,35 @@ Page({
     arr:[
       {name:"mirror",age:24},
       {name:"zhangsan" , age:30}
-    ]
+    ],
+    for_include:{
+      msg:"this msg is from test.js",
+      time: new Date(),
+      info:"does include tag soppurt data bind? "
+    },
+    // 组件icon
+    iconSize: [20, 30, 40, 50, 60, 70],
+    iconColor: [
+      'red', 'orange', 'yellow', 'green', 'rgb(0,255,255)', 'blue', 'purple'
+    ],
+    iconType: [
+      'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
+    ],
+
+    // rich-text
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello&nbsp;World!'
+      }]
+    }]
+
+
   },
   onShareAppMessage: function () {
     return {
@@ -52,6 +80,13 @@ Page({
   },
   handleTouchEnd1(e){
     // console.log(e)
+  },
+  tab_temp(){
+    console.log("tempalte be taped")
+  } , 
+
+  rich_text_tab(){
+      console.log('tap')
   }
 })
 

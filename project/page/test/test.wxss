@@ -18,3 +18,20 @@
   height:400rpx;
   background: sandybrown;
 }
+
+.normal{
+  margin-top: 30rpx;
+  display: block;
+  height: 100rpx;
+  background: green;
+  color: red
+}
+
+.bg_red{
+  background: red;
+  color: white;
+}
+
+progress:not(:first-child){
+  margin-bottom: 40rpx;
+}

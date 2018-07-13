@@ -1,0 +1,8 @@
+<template name="template_2">
+  <view style='background:yellow;padding:30rpx;'>
+    template_2
+    <text style="display:block">{{msg}}</text>
+    <text style="display:block">{{info}}</text>
+    <text style="display:block">{{time}}</text> 
+  </view>
+</template> 

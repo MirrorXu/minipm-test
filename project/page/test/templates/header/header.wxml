@@ -1,0 +1,7 @@
+<view class='header' style='height:40px;background:skyblue'>
+  this is a header
+  <view>{{msg}}</view>
+  <view>{{time}}</view>
+  <view>{{info}}</view>
+
+</view>

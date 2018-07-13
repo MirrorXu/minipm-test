@@ -1,22 +1,78 @@
+<include src="./templates/header/header.wxml" data="{{...for_include}}" />
+<!-- <view>{{for_include.info}}</view> -->
 <view class='test'>
-<view> msg :  <view  class="msgBox">{{msg}}</view></view>
-<button bindtap="changeName"> reverse msg </button>
-
-<view>
-  <checkbox checked='{{false}}'>未选中</checkbox>
-  <checkbox checked='{{1}}'>选中</checkbox>
-</view>
-<view>
-  <view>列表渲染：</view>
-  <view wx:for="{{arr}}"  wx:key="{{name}}" >
-    {{index}}: {{item.name}}--{{item.age}}
+  <view> msg :
+    <view class="msgBox">{{msg}}</view>
   </view>
-  <view wx:for="{{['a','b']}}" wx:key="{{item}}">{{index}}{{item}}</view>
-</view>
+  <button bindtap="changeName"> reverse msg </button>
+
+  <view>
+    <checkbox checked='{{false}}'>未选中</checkbox>
+    <checkbox checked='{{1}}'>选中</checkbox>
+  </view>
+  <view>
+    <view>列表渲染：</view>
+    <view wx:for="{{arr}}" wx:key="{{name}}">
+      {{index}}: {{item.name}}--{{item.age}}
+    </view>
+    <view wx:for="{{['a','b']}}" wx:key="{{item}}">{{index}}{{item}}</view>
+  </view>
 
 
-<view class='touch_box' catch:touchstart="handleTouch1" catch:touchmove="handleTouchMove1"  catch:touchend="handleTouchEnd1">
-触摸事件观察区域
-</view>
+  <view class='touch_box' catch:touchstart="handleTouch1" catch:touchmove="handleTouchMove1" catch:touchend="handleTouchEnd1">
+    触摸事件观察区域
+  </view>
+
+  <view style='margin-top:50rpx;'>
+    <view style='font-weight:bold;padding-bottom:20rpx;font-size:40rpx'>template模板引入：</view>
+    <import src="./templates/template_1.wxml" />
+    <template is="item" data="{{text: 'forbar'}}" />
+    <view style='font-weight:light;color:#aaa;font-size:25rpx;'>不能将事件直接绑定至 tempate 标签</view>
+
+    <import src="./templates/template_2.wxml" />
+    <template is="template_2" data="{{...for_include}}" />
+
+    <!-- <include src="./templates/template_2.wxml" data="{{for_include}}"/> -->
+
+  </view>
+
+
+  <view class='normal' hover-class='bg_red'>hover-class</view>
+
+  <!-- icon -->
+  <view>
+    <view class="group">
+      <block wx:for="{{iconSize}}">
+        <icon type="success" size="{{item}}" />
+      </block>
+    </view>
+
+    <view class="group">
+      <block wx:for="{{iconType}}">
+        <icon type="{{item}}" size="40" />
+      </block>
+    </view>
+
+
+    <view class="group">
+      <block wx:for="{{iconColor}}">
+        <icon type="success" size="30" color="{{item}}" />
+      </block>
+    </view>
+  </view>
+
+
+  <!-- rich-text -->
+
+  <rich-text nodes="{{nodes}}" bindtap="rich_text_tab"></rich-text>
+
+
+  <!-- progress -->
+  <progress percent="20" show-info />
+  <progress percent="40" stroke-width="12" />
+  <progress percent="60" color="pink" />
+  <progress percent="80" active />
+
+
 
 </view>
