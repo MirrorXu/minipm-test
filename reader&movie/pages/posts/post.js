@@ -1,33 +1,24 @@
-var postsData = require('../../data/posts-data.js')
+const list = require('../../data/posts-data.js').postList;
 
 Page({
-  data: {
-    //小程序总是会读取data对象来做数据绑定，这个动作我们称为动作A
-    // 而这个动作A的执行，是在onLoad函数执行之后发生的
+  data:{
+    swiperImgs:[
+      "../../images/swiper/iqiyi.png",
+      "../../images/swiper/vr.png",
+      "../../images/swiper/wx.png"
+    ],
+    news:[]
   },
-  onLoad: function () {
-
-    // this.data.postList = postsData.postList
-    this.setData({
-       postList:postsData.postList
-      });
+  onLoad(){
+    this.setData({news:list})
+    console.log(this.data.news)
   },
-
-  onPostTap: function (event) {
-    var postId = event.currentTarget.dataset.postid;
-    // console.log("on post id is" + postId);
+  linkTo(e){
+    // console.log(e);
+    let id = e.currentTarget.dataset.newsId;
+    // console.log(id)
     wx.navigateTo({
-      url: "post-detail/post-detail?id=" + postId
-    })
-  },
-
-  onSwiperTap: function (event) {
-    // target 和currentTarget
-    // target指的是当前点击的组件 和currentTarget 指的是事件捕获的组件
-    // target这里指的是image，而currentTarget指的是swiper
-    var postId = event.target.dataset.postid;
-    wx.navigateTo({
-      url: "post-detail/post-detail?id=" + postId
+      url:"post-detail/post-detail?id=" + id,
     })
   }
 })

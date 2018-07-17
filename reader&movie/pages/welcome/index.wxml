@@ -1,0 +1,10 @@
+<view class='container'>
+  <view class="img_wrapper">
+    <image src='../../images/admin.jpg'></image>
+  </view>
+  <text class='hello'>hello world</text>
+
+  <view class="moto-wrapper">
+    <text class='moto' catch:tap='linkTo'>开启小程序之旅</text>
+  </view> 
+</view>

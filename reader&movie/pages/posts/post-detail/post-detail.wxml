@@ -1,21 +1,24 @@
-<!--先静后动，先样式再数据-->
 <view class="container">
-  <image class="head-image" src="{{isPlayingMusic?postData.music.coverImg:postData.headImgSrc}}"></image>
-  <image catchtap="onMusicTap" class="audio" src="{{isPlayingMusic? '/images/music/music-stop.png': '/images/music/music-start.png'}}"></image>
-  <view class="author-date">
-    <image class="avatar" src="{{postData.avatar}}"></image>
-    <text class="author">{{postData.author}}</text>
-    <text class="const-text">发表于</text>
-    <text class="date">{{postData.dateTime}}</text>
+  <image class='head-img ' src="{{news.imgSrc}}"></image>
+  <image class='audio' src='/images/music/music-start.png'></image>
+  <view class='author-date'>
+      <image class='avator' src='{{news.avatar}}'></image>
+      <text class='author'> {{news.author}} </text>
+      <text class='const-text'>发表于</text>
+      <text class='const-text'>{{news.dateTime}}</text>
   </view>
-  <text class="title">{{postData.title}}</text>
-  <view class="tool">
-    <view class="circle-img">
-      <image wx:if="{{collected}}" catchtap="onColletionTap" src="/images/icon/collection.png"></image>
-      <image wx:else catchtap="onColletionTap" src="/images/icon/collection-anti.png"></image>
-      <image catchtap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
-    </view>
-    <view class="horizon"></view>
+  <text class='title'>{{news.title}}</text>
+
+  <view class='tools'>
+      <view class='tools-bar'>
+          <image catchtap="onColletTap" wx:if="{{!collected}}" src='/images/icon/collection.png'></image>
+          <image catchtap="onColletTap" wx:else  src='/images/icon/collection-anti.png'></image>
+          <image catchtap="onShareTap" wx:if="{{!shared}}" src='/images/icon/share.png'> </image>
+          <image catchtap="onShareTap" wx:else src='/images/icon/share-anti.png'> </image>
+      </view>
+      <!-- 横线 -->
+      <view class='line'></view>
+
+      <text class='detail'>{{news.detail}}</text>
   </view>
-  <text class="detail">{{postData.detail}}</text>
 </view>

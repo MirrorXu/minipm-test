@@ -1,11 +1,14 @@
-@import "post-item/post-item-template.wxss";
+swiper{
+  width: 100%;
+  height: 400rpx;
+}
+swiper image{
+  width: 100%;
+  height: 100%;
+}
 
- swiper{
-     width:100%;
-     height:600rpx;
- }
- /*less sass*/
- swiper image{
-     width:100%;
-     height:600rpx;
- }
+/* 引入 psot-item-tmp 模版 的样式 */
+ @import "./post-item/post-item-tmp" 
+
+
+

@@ -5,7 +5,23 @@
   min-height: 100%;
   box-sizing: border-box;
 }
+/* Mirror */
+.test-item{
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+  border-top: 2rpx solid #ccc;
+  padding-top: 20rpx;
+}
 
+swiper{
+  width: 100%;
+}
+swiper-item{
+  width: 100%;
+}
+swiper-item  image{
+  width: 100%;
+}
 .msgBox{
   color: red;
   display: inline-block;

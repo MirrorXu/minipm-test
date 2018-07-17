@@ -42,20 +42,20 @@
   <!-- icon -->
   <view>
     <view class="group">
-      <block wx:for="{{iconSize}}">
+      <block wx:for="{{iconSize}}" wx:key="item">
         <icon type="success" size="{{item}}" />
       </block>
     </view>
 
     <view class="group">
-      <block wx:for="{{iconType}}">
+      <block wx:for="{{iconType}}" wx:key="item">
         <icon type="{{item}}" size="40" />
       </block>
     </view>
 
 
     <view class="group">
-      <block wx:for="{{iconColor}}">
+      <block wx:for="{{iconColor}}" wx:key="item">
         <icon type="success" size="30" color="{{item}}" />
       </block>
     </view>
@@ -72,6 +72,27 @@
   <progress percent="40" stroke-width="12" />
   <progress percent="60" color="pink" />
   <progress percent="80" active />
+
+  <!-- navigator -->
+  <navigator open-type='switchTab' url='../component/index' hover-class='bg_red'> switchTap -> 组件 </navigator>
+  <navigator open-type='navigate' url='../component/pages/swiper/swiper' hover-class='bg_red'>组件 ->swiper</navigator>
+
+  <!-- swiper -->
+
+  <view class="test-item">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{cicle}}" indicator-active-color="red">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <button bindtap="changeIndicatorDots"> indicator-dots </button>
+    <button bindtap="changeAutoplay"> autoplay </button>
+    <switch type='switch' catch:change="cicleChange">cicle</switch>
+    <slider bindchange="intervalChange" show-value min="500" max="2000" /> interval
+    <slider bindchange="durationChange" show-value min="1000" max="10000" /> duration
+  </view>
 
 
 

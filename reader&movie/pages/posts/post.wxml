@@ -1,24 +1,18 @@
-<import src="post-item/post-item-template.wxml" />
-<!--<import src="/pages/posts/post-item/post-item-template.wxml" />-->
-<view>
-  <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" circular='true' interval="5000">
-    <swiper-item>
-      <image id="7" src="/images/wx.png" data-postId="3"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/images/vr.png" data-postId="4"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/images/iqiyi.png" data-postId="5"></image>
+<import src="./post-item/post-item-tmp" />
+
+
+<view class='container'>
+  <swiper indicator-dots="true" autoplay='true' circular='true' interval='3000' duration='500'>
+    <swiper-item wx:for="{{swiperImgs}}" wx:key="{{item}}">
+      <image src='{{item}}'></image>
     </swiper-item>
   </swiper>
 
-
-
-  <block wx:for="{{postList}}"  wx:key="{{index}}" >
-    <!--//template-->
-    <view catchtap="onPostTap" data-postId="{{item.postId}}">
-      <template is="postItem" data="{{...item}}" />
+  
+  <block wx:if="{{news.length>0}}" wx:for="{{news}}" wx:key="{{index}}">
+    <!-- template -->
+    <view bindtap="linkTo" data-news-id="{{item.postId}}">
+      <template is="post-item" data="{{...item}}" />
     </view>
   </block>
 
