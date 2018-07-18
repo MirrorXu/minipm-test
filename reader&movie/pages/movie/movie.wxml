@@ -1,3 +1,5 @@
 <view>
 this is movie page
+
+  <stars inner-text="通过movie 页面设置的inner-texts属性值"></stars>
 </view>

@@ -1,4 +1,5 @@
-<view class="stars">
-i
-  <image class='item' src='/images/icon/star.png'></image> 
+<view class="stars" bindtap='onTap'>
+  stars - components
+  <view class='innerText'>{{innerText}}</view>
+  <!-- <image class='item' src='/images/icon/star.png'></image>   -->
 </view>

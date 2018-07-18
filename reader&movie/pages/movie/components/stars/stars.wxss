@@ -1,0 +1,8 @@
+.stars{
+  color: red;
+  border: 2px solid yellow;
+}
+
+.innerText{
+  color: rebeccapurple;
+}
