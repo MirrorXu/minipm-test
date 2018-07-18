@@ -20,5 +20,8 @@ Page({
     wx.navigateTo({
       url:"post-detail/post-detail?id=" + id,
     })
+  },
+  onSwiperTab(e){
+    console.log( "swiperTab:" ,e)
   }
 })

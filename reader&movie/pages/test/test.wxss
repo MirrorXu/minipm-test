@@ -1,0 +1,14 @@
+/* pages/test/test.wxss */
+
+.outer{
+  height: 500rpx;
+  width: 500rpx;
+  background: red;
+}
+
+.inner{
+  height: 200rpx;
+  width: 200rpx;
+  background: green;
+  margin-left: 150rpx;
+  }

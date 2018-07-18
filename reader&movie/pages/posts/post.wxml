@@ -2,9 +2,9 @@
 
 
 <view class='container'>
-  <swiper indicator-dots="true" autoplay='true' circular='true' interval='3000' duration='500'>
-    <swiper-item wx:for="{{swiperImgs}}" wx:key="{{item}}">
-      <image src='{{item}}'></image>
+  <swiper bindtap='onSwiperTab' indicator-dots="true" autoplay='true' circular='true' interval='3000' duration='500'>
+    <swiper-item wx:for="{{swiperImgs}}" wx:key="{{item}}" >
+      <image data-index="{{index}}" src='{{item}}'></image>
     </swiper-item>
   </swiper>
 

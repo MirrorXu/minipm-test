@@ -1,0 +1,3 @@
+<view class='outer' catch:tap='tab1'>
+  <view class='inner' bind:tap='tab2'></view>
+</view>

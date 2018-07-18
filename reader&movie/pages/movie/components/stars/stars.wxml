@@ -1,0 +1,4 @@
+<view class="stars">
+i
+  <image class='item' src='/images/icon/star.png'></image> 
+</view>
