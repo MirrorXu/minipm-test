@@ -1,4 +1,7 @@
 {
   "usingComponents": {
-  }
+    "movie-panel":"./components/movie-panel/movie-panel",
+    "movie":"./components/movie/movie"
+  },
+  "navigationBarTitleText":"豆瓣电影"
 }

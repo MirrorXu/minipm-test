@@ -1,0 +1,5 @@
+<!--pages/movie/components/movie/movie.wxml-->
+<view class='movie'>
+    <image class='movie-image' src="{{coverImage}}"></image>
+    <text class='movie-title'>{{title}}</text>
+</view>

@@ -4,7 +4,9 @@ const config = require('../../api/api.js')
 Page({
   data:{
     movies:{
-
+      hot:undefined,
+      top250:undefined,
+      comming:undefined
     }
   },
   onLoad(){

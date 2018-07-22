@@ -1,0 +1,8 @@
+.temp{
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-box{
+  width: 300rpx;
+}

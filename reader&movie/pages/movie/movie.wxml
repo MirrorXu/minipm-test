@@ -1,5 +1,12 @@
 <view>
 this is movie page
 
-  <stars inner-text="通过movie 页面设置的inner-texts属性值"></stars>
+<movie-panel title="{{movies.hot.title}}" more="更多》" lists="{{movies.hot.subjects}}">  </movie-panel>
+<view class='temp'>
+<block wx:for="{{movies.top250.subjects}}" wx:for-item="item" wx:key="{{item.id}}">
+        <movie class="movie-box" title="{{item.title}}" cover-image="{{item.images.small}}" ></movie>
+  </block>
+</view>
+ 
+
 </view>

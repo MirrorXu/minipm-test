@@ -1,0 +1,14 @@
+<!--pages/movie/components/movie-panel/movie-panel.wxml-->
+<view class='panel'>
+  <view class='panel-header'>
+    <text class='panel-header-title'>{{title}}</text>
+    <text class='panel-header-more'>{{ more }}</text>
+  </view>
+  
+  <view class='panel-body'>
+
+    <!-- <block wx:for="{{lists}}" wx:for-item="item" wx:key="{{item.id}}">
+        <movie title="{{item.title}}" coverImage="{{item.iamges}}" ></movie>
+    </block> -->
+  </view>
+</view>

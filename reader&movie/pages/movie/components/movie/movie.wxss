@@ -1,0 +1,21 @@
+/* pages/movie/components/movie/movie.wxss */
+
+.movie{
+  display: flex;
+  flex-direction: column;
+  padding: 22rpx;
+  border: 1px solid red;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.movie-img {
+  width: 220rpx;
+  height: 270rpx;
+  padding-bottom: 20rpx;
+}
+
+.movie-title{
+    margin-bottom: 16rpx;
+    font-size: 24rpx;
+}
