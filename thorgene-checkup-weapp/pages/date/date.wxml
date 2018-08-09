@@ -1,0 +1,35 @@
+<view class='wrap'>
+  <text class='prompt-txt'>请选择您要体检的日期，预约需提前5个工作日</text>
+  <view class='header'>
+    <view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}} {{index == 6 || index == 0 ? "weekend" : ""}}'>{{item}}<view></view></view>
+  </view>
+  <view>
+    <view class='date-show'>
+      <view class='lt-arrow' bindtap='lastMonth'>
+        <image src='/image/leftMonth.png'></image>
+      </view>
+      {{year}}年{{month}}月  
+      <view class='rt-arrow' bindtap='nextMonth'>
+        <image src='/image/rightMonth.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='date-box'>
+    <block wx:for='{{dateArr}}' wx:for-index="idx" wx:for-item="item">
+      <view class='date-item'>
+        <view class='{{isToday == item.isToday ? "nowDay" : ""}} {{item.isToday == currentDate ? "current" : ""}} {{idx%7 == 0 || idx%7 == 6  ? "weekendDay" : ""}} {{item.operate !== "" ? "pastDay" : ""}}' data-date='{{item.isToday}}' data-timestamp='{{item.timestamp}}' data-today='{{isToday}}' data-operate='{{item.operate}}' data-current="{{idx}}" catchtap="onChecked">
+          <view class='date-head'>
+            <view>{{isToday == item.isToday ? "今天" : item.dateNum}}</view>
+          </view>
+          <view class='date-weight {{item.operate ? "colorFff" : ""}}' style='display:{{item.operate}}'>{{item.weight}}</view>
+        </view>
+      </view>      
+    </block>    
+  </view>
+  <view class='btnBox'>
+    <!-- <button class='confirmBtn' type='primary' disabled='{{disabled}}' catchtap='confirmNext' hover-class='none'>确定，提交预约</button> -->
+    <form bind:submit="confirmNext" report-submit="true">
+      <button type="primary" formType="submit" class='confirmBtn' disabled="{{disabled}}" hover-class='none'>下一步</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+/* reset */
+page {
+  background-color: #fff;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+
+/* page */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+/* 自定义按钮颜色 */
+button[disabled][type=primary]{
+  background-color: #bfdbf8;
+}
+button[type=primary]{
+  background-color: #2a88e9;
+}
+/*  重写 radio 样式  */
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+  border-radius: 50%;/* 圆角 */
+  width: 34rpx;
+  height: 34rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+  background: #2a88e9 !important;
+  border-color: #2a88e9 !important;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 34rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 34rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 34rpx;
+  text-align: center;
+  border-color: #2a88e9;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+}

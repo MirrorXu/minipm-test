@@ -1,0 +1,78 @@
+<view class='page'>
+  <view clsss='tab_box'>
+    <view class='nav_list'>
+      <view class='nav_item area_nav' bindtap='areaChoose'>
+        <text class='{{areaSelected ? "selected" : ""}}'>{{areaName}}</text>
+        <block wx:if="{{showArea}}">  
+          <image class='select' src='/image/top_ico.png'></image>  
+        </block>    
+        <block wx:else>  
+          <image class='select' src='/image/bottom_ico.png'></image>  
+        </block>
+      </view>
+      <view class='nav_item institutions_nav' bindtap='instChoose'>
+        <text class='{{instSelected ? "selected" : ""}}'>{{instName}}</text>
+        <block wx:if="{{showInst}}">  
+          <image class='select' src='/image/top_ico.png'></image>  
+        </block>    
+        <block wx:else>  
+          <image class='select' src='/image/bottom_ico.png'></image>  
+        </block>
+      </view>
+    </view>
+    <view class='content_list'>
+      <ul class='content_item area_list {{showArea ? "show" : "hide"}}'>
+        <block wx:for="{{areaArr}}">
+          <li class='{{index == areaClickId ? "selected" : ""}}' bindtap="areaItem" data-id="{{index}}" data-name="{{item}}">{{item}}</li>
+        </block>
+      </ul>
+      <ul class='content_item institutions_list {{showInst ? "show" : "hide"}}'>
+        <block wx:for="{{instArr}}">
+          <li class='{{index == instClickId ? "selected" : ""}}' bindtap="instItem" data-id="{{index}}" data-name="{{item}}">{{item}}</li>
+        </block>
+      </ul>
+    </view>
+  </view>
+  <!-- 门店地址 -->
+  <view class='item_list {{areaNewArr.length === 0 ? "hide" : ""}}'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class='item' wx:for="{{areaNewArr}}">
+        <label class="radio">
+          <radio value="{{index}}" checked="{{!!item.checked}}"/>
+          <block wx:if="{{!!item.checked}}">  
+            <image class='radio_select' src='/image/se1.png'></image>  
+          </block>    
+          <block wx:else>  
+            <image class='radio_select' src='/image/se2.png'></image>  
+          </block>
+          <view>
+            <text class='name'>{{item.title}}</text>
+            <text class='address'>{{item.address}}</text>
+            <view class='icon'>
+              <block wx:for="{{item.offDayChina}}" >
+                <text class=''>周{{item}}休息</text>
+              </block> 
+              <text class='{{item.parking === 1 ? "" : "hide"}}'>停车位</text>
+              <text class='{{item.breakfast === 1 ? "" : "hide"}}'>早餐</text>
+            </view>
+          </view>
+        </label>
+        <view class='mapBtn' bindtap='onMapPage'data-longitude='{{item.longitude}}' data-latitude='{{item.latitude}}' data-name='{{item.title}}'>
+          <image src='/image/map_ico.png'></image>
+        </view>
+      </view>      
+    </radio-group>
+  </view>
+  <view class='default_box {{defaultShow ? "hide" : "show"}}'>
+    <image src='/image/area_inst_default.jpg'></image>
+    <text>没有符合条件的体检地点</text>
+  </view>
+  <view class='btnBox'>
+    <!-- <button class='next_btn' bindtap='nextPage' disabled='{{disabled}}' type='primary' hover-class='none'>下一步</button> -->
+    <form bind:submit="nextPage" report-submit="true">
+      <button type="primary" formType="submit" class='next_btn' disabled="{{disabled}}" hover-class='none'>下一步</button>
+    </form>
+  </view> 
+</view>
+<view class='mask {{showArea ? "show" : "hide"}} {{showInst ? "show" : "hide"}}' bindtap='hideAreaInst'></view>
+<loading hidden="{{loadingHidden}}">加载中...</loading>

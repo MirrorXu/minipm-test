@@ -1,0 +1,85 @@
+<view class="page">
+  <view class='header' id='headHeight'>
+    <view class='head-box'>
+      <view class='name'>
+        <text>{{name}}</text>
+        <view>|</view>
+        <text>{{gender === 1 ? ' 男' : '女'}}</text>
+        <view>|</view>
+        <text>{{age}}岁</text>
+      </view>
+      <view class='address'>
+        <image src='/image/hospital_ico.png'></image>
+        <text>{{checkupAddr}}</text>
+      </view>
+      <view class='date'>
+        <image src='/image/time_ico.png'></image>
+        <text>{{checkupDate}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='content-box'>
+    <block wx:for="{{reportGroupList}}">
+      <view class='item {{item.reportResultsList.length < 1 ? "hide" : "show"}}' >
+        <view class='title' id='itemHeight' bindtap='onOpenClose' data-index="{{index}}">
+          <text class='name'>{{item.name}}</text>
+          <text class='num'>{{item.abnormalNum === 0 ? '' : item.abnormalNum + '项异常'}}</text>
+          <block wx:if="{{item.show}}">
+            <image class='sanjiao_ico' src='/image/bottom.png'></image>
+          </block>
+          <block wx:else>
+            <image class='sanjiao_ico' src='/image/right.png'></image>
+          </block>
+        </view>
+        <view class='list-box {{item.show ? "show" : "hide"}}'>
+          <!-- 类目一  -->
+          <view class='item-list'>
+            <block wx:for="{{item.reportResultsList}}">
+              <!-- 上下展示 -->
+              <block wx:if="{{item.ref === '' && item.result.length > 15}}">
+                <view class='item'>
+                  <view class='item-txt'>
+                    <view class='sx-name'>
+                      <view class='{{item.score && (item.score >= 1 || item.score < 0) ? "" : "hide"}}'>异</view>
+                      <text>{{item.name}}</text>
+                    </view>
+                    <text class='sx-data'>{{item.result}}</text>
+                  </view>
+                </view>
+              </block>
+              <!-- 左右展示 -->
+              <block wx:else>
+                <view class='item'>
+                  <view class='name'>
+                    <view class='{{item.score && (item.score >= 1 || item.score < 0) ? "" : "hide"}}'>异</view>
+                    <text>{{item.name}}</text>
+                  </view>
+                  <view class='data'>
+                    <!--  左右展示文字折行 class='{{item.result.length > 12 ? "text-align" : ""}}' -->
+                    <view>
+                      <text>{{item.result}}{{!item.unit ? '' : '('+item.unit+')'}}</text>
+                      <block wx:if="{{item.score >= 1}}">
+                        <image src='/image/up_ico.png'></image>
+                      </block>
+                      <block wx:if="{{item.score < 0}}">
+                        <image src='/image/down_ico.png'></image>
+                      </block>
+                      <block wx:if="{{item.score < 1 && item.score > 0}}">
+                        <image src='' style='width: 0rpx; height: 0rpx;'></image>
+                      </block>
+                    </view>                
+                    <text class='scope'>{{!item.ref ? '' : '(参考：'+item.ref+')'}}</text>
+                  </view>
+                </view>
+              </block>
+            </block>            
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='pdf-btn-box'>
+    <button bindtap='openDocument' type="primary" disabled='{{disabled}}' hover-class='none' data-url='{{pdfUrl}}'>查看原始报告</button>
+  </view>
+</view>
+<view class='mask {{disabled === false ? "hide" : "show"}}'></view>

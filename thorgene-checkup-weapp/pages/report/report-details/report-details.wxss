@@ -1,0 +1,280 @@
+.header{
+  width: 710rpx;
+  padding: 30rpx 20rpx;
+}
+.head-box{
+  width: 630rpx;
+  padding: 60rpx 40rpx;
+  background: linear-gradient(#3cb1ed, #1e80e4);
+  background: -webkit-linear-gradient(#3cb1ed, #1e80e4);
+  border-radius: 20rpx;
+}
+.head-box .name{
+  height: 37rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+.head-box .name view{
+  height: 36rpx;
+  width: 2rpx;
+  color: #fff;
+  margin: 0 20rpx;
+  display: inline-block;
+}
+.head-box .address, .head-box .date{
+  font-size: 34rpx;
+  line-height: 36rpx;
+  color: #fff;
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.head-box .address image{
+  width: 34rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.head-box .date image{
+  width: 36rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.content-box{
+  width: 750rpx;
+}
+.content-box .item view.title{
+  width: 100%;
+  height: 116rpx;
+  background: #fff;
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 1rpx solid #f2f2f2;
+  display: flex;
+  justify-content: flex-start;
+}
+.content-box .item view.title image{
+  width: 8rpx;
+  height: 38rpx;
+  display: inline-block;
+  margin: 39rpx 20rpx 0 40rpx;
+}
+.content-box .item view.title image.sanjiao_ico{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 10rpx;
+  display: block;
+  top: 50%;
+  margin-top: -18rpx;
+}
+.content-box .item view.title text{
+  font-size: 36rpx;
+  color: rgb(51, 51, 51);
+  line-height: 116rpx;
+}
+.content-box .item view.title text.name{
+  width: 450rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 40rpx;
+}
+.content-box .item view.title{
+  position: relative;
+}
+.content-box .item view.title text.num{
+  color: rgb(255, 75, 101);
+  position: absolute;
+  right: 80rpx;
+}
+.content-box .item .txt-msg{
+  font-size: 32rpx;
+  color: rgb(102, 102, 102);
+  line-height: 50rpx;
+  padding: 40rpx;
+  display: block;
+}
+.list-box{
+  background: #f2f2f2;
+  padding: 10rpx 0;
+}
+.list-box .item-list{
+  width: 660rpx;
+  padding: 0 20rpx;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.list-box .item-list .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 640rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f2f2f2; 
+  padding: 40rpx 10rpx 20rpx;
+}
+.list-box .item-list .item:last-child{
+  border-bottom: 0;
+}
+.list-box .item-list .item .name{
+  width: 50%;
+  font-size: 32rpx;
+  color: rgb(102, 102, 102);
+}
+.list-box .item-list .item .data{
+  width: 50%;
+}
+.list-box .item-list .item .data view{
+  text-align: right;
+}
+.list-box .item-list .item .data text.scope{
+  display: block;
+  text-align: right;
+  color: rgb(102, 102, 102);
+}
+.list-box .item-list .item .data view image{
+  width: 21rpx;
+  height: 27rpx;
+  margin-left: 20rpx;
+}
+.list-box .item-list .item-txt{
+  width: 660rpx;
+  padding: 0rpx 20rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.list-box .item-list .item-txt:last-child{
+  border-bottom: 0;
+}
+.list-box .item-list .item .name{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 20rpx;
+}
+.list-box .item-list .item .name text{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: rgb(102, 102, 102);
+  display: inline-block;
+}
+.list-box .item-list .item .name view{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background: #ff4761;
+  margin-right: 10rpx;
+}
+.list-box .item-list .item .name view.hide{
+  display: none;
+}
+.list-box .item-list .item-txt .sx-name{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.list-box .item-list .item-txt .sx-name text{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: rgb(102, 102, 102);
+  display: inline-block;
+}
+.list-box .item-list .item-txt .sx-name view{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background: #ff4761;
+  margin-right: 10rpx;
+}
+.list-box .item-list .item-txt .sx-name view.hide{
+  display: none;
+}
+.list-box .item-list .item-txt .sx-data{
+  font-size: 34rpx;
+  color: rgb(51, 51, 51);
+  line-height: 50rpx;
+  display: block;
+}
+.list-box .item-list-txt{
+  border-bottom: 0;
+}
+.btn-box{
+  position: fixed;
+  bottom: 0;
+  width: 710rpx;
+  height: 110rpx;
+  padding: 20rpx 20rpx 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, .1); */
+}
+.btn-box view{
+  width: 330rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.btn-box view.details{
+  background: #2a88e9;
+  color: #fff;
+}
+.btn-box view.consult{
+  background: #fff;
+  color: #2a88e9;
+  border: 1rpx solid #2a88e9;
+}
+.pdf-btn-box{
+  width: 100%;
+  height: 140rpx;
+  padding-top: 60rpx;
+  background: #f2f2f2;
+  position: relative;
+}
+.pdf-btn-box button{
+  width: 320rpx;
+  height: 80rpx;
+  border: 1rpx solid #666;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: rgb(102, 102, 102);
+  padding: 0;
+  margin: 0 auto;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+}
+/* 自定义按钮颜色 */
+button[disabled][type=primary]{
+  background-color: #f2f2f2;
+}
+button[type=primary]{
+  background-color: #f2f2f2;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.list-box .item-list .item .data view.text-align{
+  text-align: left;
+}

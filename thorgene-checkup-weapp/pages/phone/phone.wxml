@@ -1,0 +1,12 @@
+<view class="phoneBox">
+  <image src='/image/logo.png'></image>
+  <view class="section">
+    <input placeholder-class="placeholder" placeholder="请输入手机号码" type="number" maxlength="11" bindinput="inputPhoneNum" auto-focus />
+  </view>
+  <view class="section">
+    <input placeholder-class="placeholder" placeholder="短信验证码" type="number" bindinput="addCode" />
+    <text wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">{{sendMsg}}</text>
+    <text wx:if="{{alreadySend}}" class="sendMsg sendMsgNum">{{second+"s"}}</text>
+  </view>
+  <button type="primary" bindtap="onSubmit" class='button' disabled="{{disabled}}" hover-class='none'>确定</button>
+</view>

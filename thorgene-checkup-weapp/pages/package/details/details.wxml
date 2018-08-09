@@ -1,0 +1,20 @@
+<view class='page'>
+  <block wx:for="{{details}}">
+    <view class='list_box'>
+      <view class='title_name'>
+        <image src='/image/shu_ico.png'></image>
+        <text>{{item.title}}</text>
+      </view>
+      <text class='content'>{{item.content}}</text>
+    </view>
+  </block>
+</view>
+<view class='prompt-box'>
+  <text class='h2'>体检须知</text>
+    <text>1、为保证服务质量，请至少提前5个工作日预约体检。</text>
+    <text>2、体检当天请禁食、空腹，前一天晚餐过后请勿进餐，不吃夜宵（晚8点后）。否则将影响体检结果的准确性，可适量喝白开水。</text>
+    <text>3、胸片检查时，勿穿带有金属装饰、纽扣的衣服，请摘去项链、手机、钢笔、钥匙等金属物品。</text>
+    <text>4、女士要注意避开经期（最好包括经期前3日到经期后4日），否则将影响体检结果的准确性。</text>
+    <text>5、避免在体检过程中造成不必要的麻烦，未婚女士不能做妇科检查，怀孕妇女及准备怀孕妇女禁止做胸透等放射性检查。</text>
+    <text>6、应主动告知医生身体上的异常状况或已患疾病、手术史。切勿心存考验医生的心态，与自己的健康开玩笑。</text>
+</view>

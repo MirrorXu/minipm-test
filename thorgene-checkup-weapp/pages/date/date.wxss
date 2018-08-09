@@ -1,0 +1,153 @@
+.date-show{  
+    position: relative;  
+    width: 250rpx;   
+    font-size: 36rpx;  
+    color: #282828;  
+    text-align: center;  
+    margin: 80rpx auto 60rpx;  
+}  
+.lt-arrow,.rt-arrow{  
+    position: absolute;  
+    top: -20rpx;
+    padding: 20rpx;  
+    width: 60rpx;  
+    height: 60rpx;  
+}  
+.lt-arrow image,.rt-arrow image{
+    width: 17rpx;  
+    height: 30rpx;  
+}
+.lt-arrow{  
+    left: -110rpx;
+}
+.rt-arrow{  
+  right: -100rpx;  
+}
+.prompt-txt{
+  height: 70rpx;
+  background: #d9e5f5;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  text-indent: 1rem;
+  color: #999;
+  display: block;
+}
+.header{  
+  height: 80rpx;
+  background: #f3f3f3;
+  line-height: 80rpx;
+}  
+.header>view{  
+  display: inline-block;  
+  width: 14.285%;  
+  color: #333;  
+  font-size: 30rpx;  
+  text-align: center;  
+  border-bottom: 1px solid #D0D0D0;    
+}
+.weekMark{  
+  position: relative;  
+}  
+.weekMark view{  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  width: 100%;  
+  border-bottom: 1px solid #2a88e9;  
+}  
+.date-box{  
+  font-size: 0;  
+  padding: 10rpx 0;  
+}  
+.date-box>view.date-item{  
+  position: relative;  
+  display: inline-block;  
+  width: 14.285%;  
+  color: #020202;  
+  font-size: 34rpx;  
+  text-align: center;  
+  vertical-align: middle;  
+  margin: 25rpx 0;
+  height: 70rpx;  
+}
+.date-box>view.date-item>view{
+  width: 80rpx;
+  margin: 0 auto;
+  padding: 5rpx 0;
+}
+.date-head{   
+  font-size: 32rpx;
+  line-height: 40rpx;  
+}  
+/* .nowDay .date-head{  
+  width: 60rpx;   
+  text-align: center;  
+  color: #fff;  
+  background-color: #576b95;  
+  margin: 0 auto;  
+} 今日样式 */
+.nowDay .date-head{
+  font-size: 28rpx;
+}
+.current{   
+  color: #fff;  
+  background-color: #2a88e9;
+  border-radius: 10rpx;
+}
+.current .date-head view{
+  color: #fff;
+}
+.date-weight{  
+  font-size: 22rpx;  
+  line-height: 30rpx;
+  color: #999; 
+}
+.current .date-weight{
+  color: #fff;
+}
+.colorFff{
+  color: #fff;
+}    
+.one{  
+  position: absolute;  
+  bottom: 0;  
+  right: 5rpx;  
+  width: 20rpx;  
+  height: 20rpx;  
+  border-radius: 50%;  
+  background-color: red;  
+}  
+.two{  
+  position: absolute;  
+  bottom: 30rpx;  
+  right: 5rpx;  
+  width: 20rpx;  
+  height: 20rpx;  
+  border-radius: 50%;  
+  background-color: blue;  
+}
+.header>view.weekend{
+  color: #2a88e9;
+}
+.date-box view.weekendDay{
+  color: #2a88e9;
+}
+.date-box view.pastDay{
+  color: #bfbfbf;
+}
+.btnBox{
+  width: 100%;
+  height: 130rpx;
+  padding-top: 20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+.btnBox button.confirmBtn{
+  width: 660rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  display: block;
+} 

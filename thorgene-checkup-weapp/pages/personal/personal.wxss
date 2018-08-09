@@ -1,0 +1,281 @@
+page{
+  background: #f2f2f2;
+}
+.page{
+  position: relative;
+}
+.header{
+  width: 100%;
+  height: 400rpx;
+  padding-top: 40rpx;
+  background: linear-gradient(#3cb1ed, #1e80e4);
+  background: -webkit-linear-gradient(#3cb1ed, #1e80e4);
+  overflow: hidden;
+}
+.head_img{
+  width: 166rpx;
+  height: 166rpx;
+  margin-left: 60rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 10rpx solid #5ebaf2;
+  float: left;
+}
+.name_phone{
+  width: 420rpx;
+  height: 136rpx;
+  padding-top: 34rpx;
+  margin-left: 50rpx;
+  float: left;
+  position: relative;
+}
+.head_img .avatarurl{
+  width: 146rpx;
+  height: 146rpx;
+  display: block;
+}
+.name_phone .name{
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+.name_phone text.phone{
+  line-height: 50rpx;
+  margin-top: 20rpx;
+  font-size: 34rpx;
+  color: #fff;
+  display: block;
+}
+.numTab{
+  width: 45rpx;
+  height: 35rpx;
+  display: block;
+  position: absolute;
+  top: 110rpx;
+  right: 10rpx;
+}
+.content{
+  width: 710rpx;
+  position: absolute;
+  top: 240rpx;
+  left: 20rpx;
+  padding-bottom: 50rpx;
+}
+.content .card{
+  width: 100%;
+  background: #fff;
+  border-radius: 20rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.content .card>view.text_box{
+  width: 570rpx;
+  padding: 30rpx 50rpx;
+  border-bottom: 1rpx solid #d7d7d7;
+  margin: 0 auto;
+  display: block;
+}
+.content .card>view.text_box text{
+  display: block;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 48rpx;
+}
+.content .card>view.text_box text.detail-title{
+  font-size: 36rpx;
+  color: #333;
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+}
+.content .card>view.text_box view.user-msg{
+  display: flex;
+  align-items: flex-start;
+}
+.content .card>view.text_box view.user-msg text:first-child{
+  margin-right: 30rpx
+}
+.content .card .ico1{
+  width: 42rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 36rpx;
+  left: 20rpx;
+  display: block;
+}
+.content .card .ico2{
+  width: 131rpx;
+  height: 131rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+}
+.content .card button{
+  width: 100%;
+  color: #2a88e9;
+  border: #fff;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+.content .card .msg_box{
+  width: 570rpx;
+  padding: 30rpx 50rpx;
+  margin: 0 auto;
+}
+.content .card .msg_box text{
+  display: block;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 46rpx;
+}
+.content .card .msg_box .content-box{
+  width: 570rpx;
+  display: flex;
+  align-items: baseline;
+}
+.content .card .msg_box .content-box text.title-txt{
+  display: inline-block;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 46rpx;
+  width: 100rpx;
+}
+.content .card .msg_box .content-box view.content-txt{
+  width: 470rpx;
+  display: block;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 46rpx;
+}
+.content .card .msg_box .content-box view.content-txt text.map-btn{
+  color: #339ceb;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.content .card .msg_box .content-box .map-btn{
+  display: inline-block;
+}
+.content .card .msg_box text:nth-child(1){
+  color: #333;
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.prompt{
+  width: 670rpx;
+  position: fixed;
+  top: 50rpx;
+  left: 40rpx;
+  display: none;
+  z-index: 9;
+}
+.prompt .title{
+  position: absolute;
+  top: 145rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  width: 200rpx;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  color: #fff;
+  text-align: center;
+}
+.prompt image{
+  width: 670rpx;
+  height: 213rpx;
+  display: block;
+}
+.prompt>view.txt-box{
+  background: #fff;
+  width: 630rpx;
+  height: 650rpx;
+  overflow-y: scroll;
+  padding: 20rpx;
+}
+.prompt>view.txt-box text{
+  font-size: 30rpx;
+  color: #333;
+  line-height: 46rpx;
+  display: block;
+}
+.prompt>view.button-box{
+  width: 670rpx;
+  height: 100rpx;
+  background: #fff;
+  padding-top: 35rpx;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.prompt>view.button-box .submit{
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+}
+.default_box{
+  width: 750rpx;
+  position: absolute;
+  top: 250rpx;
+  left: 0;
+  background: #f2f2f2;
+  padding-top: 130rpx;
+}
+.default_box image{
+  width: 750rpx;
+  height: 317rpx;
+  display: block;
+}
+.default_box text{
+  font-size: 34rpx;
+  color: #999;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 60rpx;
+  display: block;
+}
+.kfBtn{
+  width: 116rpx;
+  height: 116rpx;
+  background: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: fixed;
+  bottom: 50rpx;
+  right: 20rpx;
+}
+.kfBtn:after{
+  border: 0px;
+}
+.kfImg{
+  width: 116rpx;
+  height: 116rpx;
+}
+.content{
+  display: block;
+}
+.default_box{
+  display: none;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.footer-msg{
+  font-size: 28rpx;
+  color: #c4c4c4;
+  text-align: center;
+  margin-top: 40rpx;
+  width: 100%;
+  display: block;
+}

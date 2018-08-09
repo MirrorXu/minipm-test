@@ -1,0 +1,125 @@
+<view class='page'>
+  <view class='header'>
+    <view class='head_img'>
+      <open-data class="avatarurl" type="userAvatarUrl"></open-data>
+    </view>
+    <view class='name_phone'>
+      <view class='name'>昵称：
+        <open-data class="nickname" type="userNickName"></open-data>
+      </view>   
+      <text class='phone'>手机号：{{userPhone}}</text>
+      <image class='numTab' bindtap='onPhoneTab' src='/image/numTab.png'></image> 
+    </view>
+  </view>
+  <view class='content {{dataList.length === 0 ? "hide" : ""}}'>
+    <block wx:for="{{dataList}}" wx:key="{{index}}">
+      <view class='card card1 {{item.besUpdateStatus === 0 ? "" : "hide"}}'>
+        <view class='text_box'>
+          <text class='detail-title'>{{item.detailTitle}}</text>
+          <view class='user-msg'>
+            <text>体检人：{{item.name}}</text>
+            <text>体检编号：{{item.appointmentCode}}</text>
+          </view>
+          <text>{{item.companyName}}</text>
+        </view>
+        <button plain='true' bindtap="onPromptShow" hover-class="none" data-idx="{{index}}">立即预约</button>
+        <image class='ico1' src='/image/content_ico.png'></image>
+        <image class='ico2' src='/image/daiyuyue.png'></image>
+      </view>
+      <view class='card card2 {{item.besUpdateStatus === 10 || item.besUpdateStatus === 20 || item.besUpdateStatus === 30 || item.besUpdateStatus === 1 ? "" : "hide"}}'>
+        <view class='text_box'>
+          <text class='detail-title'>{{item.detailTitle}}</text>
+          <view class='user-msg'>
+            <text>体检人：{{item.name}}</text>
+            <text>体检编号：{{item.appointmentCode}}</text>
+          </view>
+          <text>{{item.companyName}}</text>
+        </view>
+        <view class='msg_box'>
+          <text>预约信息</text>
+          <view class='content-box'>
+            <text class='title-txt'>项目：</text>
+            <view class='content-txt'>{{item.packagNames}}</view>
+          </view>
+          <view class='content-box'>
+            <text class='title-txt'>地点：</text>
+            <view class='content-txt'>{{item.branchTitle}}<text class='map-btn' bindtap='onMapPage' data-latitude='{{item.latitude}}' data-longitude='{{item.longitude}}' data-name='{{item.branchTitle}}'>查看地址</text></view>
+          </view>
+          <view class='content-box'>
+            <text class='title-txt'>时间：</text>
+            <view class='content-txt'>{{item.detTime}}</view>
+          </view>
+        </view>
+        <image class='ico1' src='/image/content_ico.png'></image>
+        <image class='ico2' src='/image/yuyuezhong.png'></image>
+      </view>
+      <view class='card card3 {{item.besUpdateStatus === 40 || item.besUpdateStatus === 2 ? "" : "hide"}}'>
+        <view class='text_box'>
+          <text class='detail-title'>{{item.detailTitle}}</text>
+          <view class='user-msg'>
+            <text>体检人：{{item.name}}</text>
+            <text>体检编号：{{item.appointmentCode}}</text>
+          </view>
+          <text>{{item.companyName}}</text>
+        </view>
+        <view class='msg_box'>
+          <text>预约信息</text>
+          <view class='content-box'>
+            <text class='title-txt'>项目：</text>
+            <view class='content-txt'>{{item.packagNames}}</view>
+          </view>
+          <view class='content-box'>
+            <text class='title-txt'>地点：</text>
+            <view class='content-txt'>{{item.branchTitle}}<text class='map-btn' bindtap='onMapPage' data-latitude='{{item.latitude}}' data-longitude='{{item.longitude}}' data-name='{{item.branchTitle}}'>查看地址</text></view>
+          </view>
+          <view class='content-box'>
+            <text class='title-txt'>时间：</text>
+            <view class='content-txt'>{{item.detTime}}</view>
+          </view>
+        </view>
+        <image class='ico1' src='/image/content_ico.png'></image>
+        <image class='ico2' src='/image/yiqueren.png'></image>
+      </view>
+      <view class='card card4 {{item.besUpdateStatus === 50 || item.besUpdateStatus === 3 ? "" : "hide"}}'>
+        <view class='text_box'>
+          <text class='detail-title'>{{item.detailTitle}}</text>
+          <view class='user-msg'>
+            <text>体检人：{{item.name}}</text>
+            <text>体检编号：{{item.appointmentCode}}</text>
+          </view>
+          <text>{{item.companyName}}</text>
+        </view>
+        <button plain='true' data-url='{{item.pdfUrl}}' data-reportid='{{item.reportId}}' hover-class='none' data-idx='{{index}}' bindtap='openDocument'>查看报告</button>
+        <image class='ico1' src='/image/yiwanchen_ico.png'></image>
+        <image class='ico2' src='/image/yiwanchen.png'></image>
+      </view>
+    </block>
+    <text class='footer-msg'>取消或变更预约信息请联系客服</text>
+  </view>
+  <!-- 没有体检订单的情况下 显示缺省页 -->
+  <view class='default_box {{dataList.length === 0 ? "show" : "hide"}}'>
+    <image src='/image/default.png'></image>
+    <text>当前没有可预约的体检</text>
+  </view>
+  <!-- 体检须知弹窗 -->
+  <view class='prompt {{promptShow ? "show" : "hide"}}'>
+    <image src='/image/pop_top.png'></image>
+    <text class='title'>体检须知</text>
+    <view class='txt-box'>
+      <text>1、为保证服务质量，请至少提前5个工作日预约体检。</text>
+      <text>2、体检当天请禁食、空腹，前一天晚餐过后请勿进餐，不吃夜宵（晚8点后）。否则将影响体检结果的准确性，可适量喝白开水。</text>
+      <text>3、胸片检查时，勿穿带有金属装饰、纽扣的衣服，请摘去项链、手机、钢笔、钥匙等金属物品。</text>
+      <text>4、女士要注意避开经期（最好包括经期前3日到经期后4日），否则将影响体检结果的准确性。</text>
+      <text>5、避免在体检过程中造成不必要的麻烦，未婚女士不能做妇科检查，怀孕妇女及准备怀孕妇女禁止做胸透等放射性检查。</text>
+      <text>6、应主动告知医生身体上的异常状况或已患疾病、手术史。切勿心存考验医生的心态，与自己的健康开玩笑。</text>
+    </view>
+    <view class='button-box'>
+      <button class='submit' type='primary' data-appointmentId='{{appointmentId}}' bindtap="onSubmit" hover-class='none'>知道了</button>
+    </view>
+  </view>
+</view>
+<button class="kfBtn" open-type="contact" session-from="weapp">
+  <image class="kfImg" src="/image/kf_icon.png"></image>
+</button>
+<view class='mask {{promptShow ? "show" : "hide"}}' bindtap="onClosePrompt"></view>
+<loading hidden="{{loadingHidden}}">加载中...</loading>

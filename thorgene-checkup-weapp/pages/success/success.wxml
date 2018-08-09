@@ -1,0 +1,6 @@
+<view class='success_page'>
+  <image src='/image/submit_success_ico.png'></image>
+  <text class='success_txt'>提交成功</text>
+  <text>企业专属体检客服将按照预约信息为您安排体检并通知您，请留意微信和短信消息。</text>
+  <button class='submit' type='primary' data-appointmentId='{{appointmentId}}' bindtap="onSubmit" hover-class='none'>确定</button>
+</view>

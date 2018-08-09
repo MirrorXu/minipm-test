@@ -1,0 +1,81 @@
+<view class="page">
+  <view class='head-box'>
+    <view class='name'>
+      <text>{{name}}</text>
+      <view>|</view>
+      <text>{{gender === 1 ? '男' : '女'}}</text>
+      <view>|</view>
+      <text>{{age}}岁</text>
+    </view>
+    <view class='address'>
+      <image src='/image/hospital_ico.png'></image>
+      <text>{{checkupAddr}}</text>
+    </view>
+    <view class='date'>
+      <image src='/image/time_ico.png'></image>
+      <text>{{checkupDate}}</text>
+    </view>
+  </view>
+  <view class='content-box'>
+    <view class='item item1'>
+      <view class='title'>
+        <image src='/image/shu_ico.png'></image>
+        <text>汇总分析</text>
+      </view>
+      <text class='txt-msg'>{{summary}}</text>
+    </view>
+    <view class='item item2 {{abnormalGroupList.length < 1 ? "hide" : "show"}}'>
+      <view class='title'>
+        <image src='/image/shu_ico.png'></image>
+        <text>异常指标</text>
+        <text class='num'>{{abnormalNum}}项异常</text>
+      </view>
+      <view class='list-box'>
+        <!-- 类目一  -->
+        <block wx:for="{{abnormalGroupList}}">
+          <view class='item-box'>
+            <text class='item-title'>{{item.name}}</text>
+            <view class='item-list item-list-txt'>
+              <block wx:for="{{item.reportResultsList}}">
+              <!-- 上下展示 -->
+              <block wx:if="{{item.ref === '' && item.result.length > 15}}">
+                <view class='item-txt'>
+                  <text class='name'>{{item.name}}</text>
+                  <text class='data'>{{item.result}}</text>
+                </view>
+              </block>
+              <!-- 左右展示 -->
+              <block wx:else>
+                <view class='item'>
+                  <text class='name'>{{item.name}}</text>
+                  <view class='data'>
+                    <view>
+                      <text>{{item.result}}{{!item.unit ? '' : '('+item.unit+')'}}</text>
+                      <block wx:if="{{item.score >= 1}}">
+                        <image src='/image/up_ico.png'></image>
+                      </block>
+                      <block wx:if="{{item.score < 0}}">
+                        <image src='/image/down_ico.png'></image>
+                      </block>
+                      <block wx:if="{{item.score < 1 && item.score > 0}}">
+                        <image src='' style='width: 0rpx; height: 0rpx;'></image>
+                      </block>
+                    </view>                
+                    <text class='scope'>{{!item.ref ? '' : '(参考：'+item.ref+')'}}</text>
+                  </view>
+                </view>
+              </block>
+              </block>
+            </view>
+          </view>
+        </block>      
+      </view>
+    </view>
+  </view>
+  <view class='btn-box'>
+    <view class='details' bindtap='onDetailsPage'>报告详情</view>
+    <button open-type="contact" session-from="weapp">
+      <view class='consult'>在线咨询</view>
+    </button>    
+  </view>
+</view>

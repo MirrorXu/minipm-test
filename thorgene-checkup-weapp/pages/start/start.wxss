@@ -1,0 +1,32 @@
+.avatarurl{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 200rpx auto 0;
+  display: block;
+  border-radius: 50%;
+}
+.nickname{
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  display: block;
+}
+image{
+  width: 100%;
+  height: 887rpx;
+  display: block;
+}
+button.startBtn{
+  width: 610rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 80rpx auto;
+}
+button[disabled][type=primary]{
+  background-color: #bfdbf8;
+}
+button[type=primary]{
+  background-color: #2a88e9;
+}

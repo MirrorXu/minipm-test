@@ -1,0 +1,65 @@
+<view class='page'>
+  <view class='basis_box'>
+    <view class='title_name'>
+      <image src='/image/shu_ico.png'></image>
+      <text>基础套餐</text>
+    </view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <block wx:for="{{base}}">
+        <view class='label_box'>
+          <label class="radio" >
+            <radio value="{{index}}" data-pid="{{item.packageId}}"/>
+            <block wx:if="{{item.checked}}">  
+              <image class='select' src='/image/se1.png'></image>  
+            </block>    
+            <block wx:else>  
+              <image class='select' src='/image/se2.png'></image>  
+            </block>
+            <view class='txt_view'>
+              <text class='packageName'>{{item.title}}</text>
+              <text class='count'>({{item.count}}项)</text>
+            </view>
+          </label>
+          <view class='image_view' bindtap='baseDetailsPage' data-idx='{{index}}'>
+            <text>套餐介绍</text>
+          </view>
+        </view>
+      </block>
+    </radio-group>
+  </view>
+  <view class='custom_box {{custom.length < 1 ? "hide" : ""}}'>
+    <view class='title_name'>
+      <image src='/image/shu_ico.png'></image>
+      <text>个性化体检包</text>
+    </view>
+    <radio-group class="radio-group" bindchange="radioChange2">
+      <block wx:for="{{custom}}">
+        <view class='label_box'>
+          <label class="radio">
+            <radio value="{{index}}"/>
+            <block wx:if="{{item.checked}}">  
+              <image class='select' src='/image/se1.png'></image>  
+            </block>    
+            <block wx:else>  
+              <image class='select' src='/image/se2.png'></image>  
+            </block>
+            <view class='txt_view'>
+              <text class='packageName'>{{item.title}}</text>
+              <text class='count'>({{item.count}}项)</text>
+            </view>
+          </label>
+          <view class='image_view' catchtap='coustomDetailsPage' data-idx='{{index}}'>
+            <text>套餐介绍</text>
+          </view>
+        </view>       
+      </block>      
+    </radio-group>
+  </view>
+  <view class='btnBox'>
+    <!-- <button class='submitBtn' type='primary' disabled='{{disabled}}' bindtap='nextPage' hover-class='none'>下一步</button> -->
+    <form bind:submit="nextPage" report-submit="true">
+      <button type="primary" formType="submit" class='submitBtn' disabled="{{disabled}}" hover-class='none'>下一步</button>
+    </form>
+  </view>  
+</view>
+<loading hidden="{{loadingHidden}}">加载中...</loading>

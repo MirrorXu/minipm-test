@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/personal/personal",
+    "pages/success/success",
+    "pages/phone/phone",
+    "pages/address/address",  
+    "pages/date/date",
+    "pages/start/start",
+    "pages/package/package",
+    "pages/package/details/details",
+    "pages/web-view/web-view",
+    "pages/report/report-conclusion/report-conclusion",
+    "pages/report/report-details/report-details",
+    "pages/report/report-assess/report-assess"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "员工体检预约",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

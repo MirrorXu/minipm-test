@@ -1,0 +1,4 @@
+<view>
+  <image src='/image/home_banner.png'></image>
+  <button class="startBtn" type="primary" wx:if="{{canIUse}}" hover-class='none' bindtap='onStart'>开始预约</button>
+</view>

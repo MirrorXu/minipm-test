@@ -1,0 +1,50 @@
+.title_name{
+  width: 630rpx;
+  margin: 0 auto;
+  position: relative;
+  padding: 30rpx 40rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.title_name image{
+  width: 8rpx;
+  height: 38rpx;
+  display: block;
+  position: absolute;
+  top: 36rpx;
+  left: 20rpx;
+}
+.title_name text{
+  line-height: 40rpx;
+}
+.list_box{
+  border-bottom: 1rpx solid #d7d7d7;
+}
+.list_box:last-child{
+  border-bottom: 0;
+}
+.list_box text.content{
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #999;
+  padding: 0 60rpx 30rpx;
+  display: block;
+}
+.prompt-box{
+  width: 660rpx;
+  margin: 30rpx auto;
+  border: 1rpx dashed #d7d7d7;
+  padding: 10rpx 20rpx 20rpx;
+  border-radius: 10rpx;
+}
+.prompt-box text{
+  display: block;
+  font-size: 30rpx;
+  line-height: 46rpx;
+  color: #999;
+}
+.prompt-box text.h2{
+  font-size: 32rpx;
+  color: #666;
+  line-height: 60rpx;
+}
